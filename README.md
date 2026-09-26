@@ -3,7 +3,7 @@
 Detects your VR from the VR standings screen, tracks a
 running average, and writes a live overlay for OBS.
 
-## 1. Install Tesseract OCR (the engine, not just the Python wrapper)
+## 1. Install Tesseract OCR 
 
 Windows installer (UB Mannheim build): https://github.com/UB-Mannheim/tesseract/wiki
 
