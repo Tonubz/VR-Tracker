@@ -84,7 +84,7 @@ class FrameSource:
             index = source_config["camera_index"]
             width = source_config.get("capture_width", 1920)
             height = source_config.get("capture_height", 1080)
-            self.cap = cv2.VideoCapture(index, cv2.CAP_DSHOW)
+            self.cap = cv2.VideoCapture(index)
             self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
             self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
             if not self.cap.isOpened():

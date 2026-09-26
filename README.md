@@ -5,8 +5,7 @@ running average, and writes a live overlay for OBS.
 
 ## 1. Install Tesseract OCR (the engine, not just the Python wrapper)
 
-Windows installer (UB Mannheim build): https://github.com/UB-Mannheim/tesseract/wiki
-
+**Windows:** installer (UB Mannheim build): https://github.com/UB-Mannheim/tesseract/wiki
 During install, note the install path (usually
 `C:\Program Files\Tesseract-OCR\tesseract.exe`). If `pytesseract` can't
 find it automatically, open `vr_tracker.py` and uncomment/edit this line:
@@ -15,18 +14,43 @@ find it automatically, open `vr_tracker.py` and uncomment/edit this line:
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 ```
 
+**Mac:**
+```
+brew install tesseract
+```
+
+**Linux (Debian/Ubuntu):**
+```
+sudo apt install tesseract-ocr
+```
+
+On Mac/Linux, `pytesseract` usually finds Tesseract automatically once
+it's installed, so the `tesseract_cmd` line above can stay commented out.
+
 ## 2. Install Python packages
 
+**Windows:**
 ```
 py -m pip install -r requirements.txt
+```
+
+**Mac/Linux:**
+```
+python3 -m pip install -r requirements.txt
 ```
 
 ## 3. Calibrate (do this once, with the VR screen visible)
 
 Get Mario Kart World showing the VR standings screen, then run:
 
+**Windows:**
 ```
-calibrate.py
+py calibrate.py
+```
+
+**Mac/Linux:**
+```
+python3 calibrate.py
 ```
 TIP: It's best to take a screenshot of the VR screen beforehand so that you don't have to set it up whilst mid-game.
 
@@ -51,8 +75,14 @@ window changes.
 
 ## 4. Run the tracker
 
+**Windows:**
 ```
-vr_tracker.py
+py vr_tracker.py
+```
+
+**Mac/Linux:**
+```
+python3 vr_tracker.py
 ```
 
 Leave it running. Every time it detects the VR screen, it OCRs the number and updates:
@@ -64,7 +94,8 @@ Leave it running. Every time it detects the VR screen, it OCRs the number and up
 
 1. In OBS, add a **Browser Source**.
 2. Check **Local file**, and point it at the full path to `overlay.html`
-   (e.g. `C:\Users\your_user\Downloads\VR_Tracker\overlay.html`).
+   (e.g. `C:\Users\your_user\Downloads\VR_Tracker\overlay.html` on Windows,
+   or `/Users/your_user/Downloads/VR_Tracker/overlay.html` on Mac/Linux).
 3. Set width/height to something like 500x150 and position it wherever
    you want on your scene.
 

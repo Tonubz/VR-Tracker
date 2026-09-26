@@ -54,7 +54,7 @@ def select_camera_index():
     confirms the one showing the OBS Virtual Camera / capture card feed."""
     print("Checking camera indices... a preview window will pop up for each one found.")
     for idx in range(6):
-        cap = cv2.VideoCapture(idx, cv2.CAP_DSHOW)
+        cap = cv2.VideoCapture(idx)
         if not cap.isOpened():
             cap.release()
             continue
