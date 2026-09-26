@@ -60,8 +60,8 @@ First it asks which **capture source** to use:
 - **Camera / capture card feed** — USE THIS, It reads frames through the **OBS Virtual
   Camera**.
 
-  Before choosing this, in OBS: add your capture card as a source in a
-  scene, then go to **Controls > Start Virtual Camera**. The script will
+  Before selecting, in OBS: add your capture card as a source in a
+  scene, then click the button that says **Start Virtual Camera**. The script will
   then cycle through camera indices with a preview window — press `y` when
   it shows your capture card feed, or any other key to try the next index.
 
@@ -96,8 +96,7 @@ Leave it running. Every time it detects the VR screen, it OCRs the number and up
 2. Check **Local file**, and point it at the full path to `overlay.html`
    (e.g. `C:\Users\your_user\Downloads\VR_Tracker\overlay.html` on Windows,
    or `/Users/your_user/Downloads/VR_Tracker/overlay.html` on Mac/Linux).
-3. Set width/height to something like 500x150 and position it wherever
-   you want on your scene.
+3. Set width/height to something like 500x150 and position it anywhere of your choosing.
 
 OBS automatically reloads local-file browser sources when the file
 changes on disk, so it'll update live as new VR readings come in, no
